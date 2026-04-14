@@ -25,6 +25,13 @@ In this workshop we will learn:
 
 ## Launch the Labspace
 
+
+```bash
+docker compose -f oci://ajeetraina777/labspace-container-security up
+```
+
+and then open your browser to [http://localhost:3030](http://localhost:3030)
+
 ### Cloning the repo locally
 
 - Clone the repo
@@ -33,16 +40,6 @@ In this workshop we will learn:
 ```bash
 CONTENT_PATH=$PWD docker compose up --watch
 ```
-
-### With Cloning the repo
-
-To launch the lab, run the following command:
-
-```bash
-docker compose -f oci://ajeetraina777/labspace-container-security up
-```
-
-and then open your browser to [http://localhost:3030](http://localhost:3030)
 
 ### Using the Docker Desktop extension
 
