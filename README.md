@@ -1,62 +1,62 @@
-# Labspace for Container Security 
 
-
-Here's a complete Labspace that covers:
-- Container Best Practices
-- Docker Scout &
-- Docker Hardened Images (DHI)
-
+# Labspace - Creating a More Secure Production with Containers
 
 <img width="1464" height="991" alt="image" src="https://github.com/user-attachments/assets/3c409ab7-a9b3-47c3-ac5e-9cbeb53eda81" />
 
 
-## ✨ Authoring with Claude Code
+Welcome to this labspace on container security and Docker Hardened Images! This workshop
+will take you from surfacing vulnerabilities in an unverified base image all the way to
+a fully hardened, policy-compliant, distroless production image with built-in supply chain
+attestations.
 
-This repo includes a Claude Code slash command that can scaffold your entire labspace automatically — all section markdown files, `labspace.yaml`, `compose.override.yaml`, and starter project files.
+## Learning objectives
 
-**Prerequisites:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
+In this workshop we will learn:
 
-1. Clone your newly created repo to your local machine
-2. Open the repo in Claude Code
-3. Run:
-```
-   /labspace-author Teach Docker networking using bridge and overlay networks
-```
-4. Claude will ask a few questions (audience, tech stack, GitHub repo URL) and then generate all the files
+- How to surface CVE exposure using Docker Scout on a real-world Node.js app
+- How to apply 8 container security best practices to progressively harden an image
+- How to use multi-stage builds to keep production images lean and clean
+- How to run containers as non-root with read-only filesystems and dropped capabilities
+- How to scan continuously with Docker Scout — locally, in CI, and at the registry
+- How to manage secrets safely using BuildKit and avoid common leakage patterns
+- How to migrate from a standard base image to Docker Hardened Images (DHI)
+- How to inspect DHI attestations — SBOM, VEX, FIPS, SLSA provenance
+- How to integrate DHI VEX documents with external scanners like Grype and Trivy
 
-> You can also run `/labspace-author` with no arguments and Claude will guide you through it interactively.
+## Launch the Labspace
 
-## Instructions
+To launch the lab, run the following command:
 
-1. Create a new repository using this repo as the template ([docs here](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)).
-
-   > **NOTE:** After creating the repo, a GHA workflow will run to do some additional bootstrapping. The bootstrapping workflow file will be removed during bootstrapping.
-
-2. Clone your newly created repo to your local machine
-3. Start the local development mode:
 ```bash
-   # On Mac/Linux
-   CONTENT_PATH=$PWD docker compose up --watch
-
-   # On Windows with PowerShell
-   $Env:CONTENT_PATH = (Get-Location).Path; docker compose up --watch
+docker compose -f oci://ajeetraina/labspace-container-secutiry up
 ```
-4. Update the `labspace/labspace.yaml` with your Labspace's title and description
-5. Write your Labspace! Being in dev mode, your changes should be visible in the interface without a restart. Feel free to edit either on your host machine or in the Labspace itself!
 
-   Add any supporting application files or resources directly into the Labspace. This repo will be cloned into the Labspace at startup.
+and then open your browser to [http://localhost:3030](http://localhost:3030)
 
-   Be sure to check out the [docs](https://github.com/dockersamples/labspace-infra/tree/main/docs) for additional information and guidelines.
+### Using the Docker Desktop extension
 
-## Setting up the deployment pipeline
+If you have the Labspace extension installed (`docker extension install dockersamples/labspace-extension` if not), you can also click [this link](https://open.docker.com/dashboard/extension-tab?extensionId=dockersamples/labspace-extension&location=ajeetraina/labspace-container-secutiry&title=container-security) to launch the Labspace.
 
-The template repo contains a workflow file to make it easy to publish your Labspace.
+## Contributing
 
-1. Add GitHub Action Secrets in your new repo for the following:
-   - `DOCKERHUB_USERNAME` - the username to authenticate to Docker Hub with
-   - `DOCKERHUB_TOKEN` - a personal or organization access token to use for authentication
-2. In the `.github/workflows/publish-labspace.yaml.temp` file, update the `DOCKERHUB_REPO` with the name of the Docker Hub repo you want to publish to.
-3. Rename the workflow file to remove the `.temp` extension.
-```bash
-   mv .github/workflows/publish-labspace.yaml.temp .github/workflows/publish-labspace.yaml
-```
+If you find something wrong or something that needs to be updated, feel free to submit a PR. If you want to make a larger change, feel free to fork the repo into your own repository.
+
+**Important note:** If you fork it, you will need to update the GHA workflow to point to your own Hub repo.
+
+1. Clone this repo
+
+2. Start the Labspace in content development mode:
+
+    ```bash
+    # On Mac/Linux
+    CONTENT_PATH=$PWD docker compose up --watch
+
+    # On Windows with PowerShell
+    $Env:CONTENT_PATH = (Get-Location).Path; docker compose up --watch
+    ```
+
+3. Open the Labspace at http://localhost:3030.
+
+4. Make the necessary changes and validate they appear as you expect in the Labspace
+
+    Be sure to check out the [docs](https://github.com/dockersamples/labspace-infra/tree/main/docs) for additional information and guidelines.
