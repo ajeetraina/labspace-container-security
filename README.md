@@ -28,7 +28,7 @@ In this workshop we will learn:
 To launch the lab, run the following command:
 
 ```bash
-docker compose -f oci://ajeetraina/labspace-container-secutiry up
+docker compose -f oci://ajeetraina/labspace-container-security up
 ```
 
 and then open your browser to [http://localhost:3030](http://localhost:3030)
