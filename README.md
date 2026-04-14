@@ -1,9 +1,11 @@
-# Labspace for Container Security - 101,201 and 301
+# Labspace for Container Security 
+
 
 Here's a complete Labspace that covers:
 - Container Best Practices
 - Docker Scout &
 - Docker Hardened Images (DHI)
+
 
 <img width="1464" height="991" alt="image" src="https://github.com/user-attachments/assets/3c409ab7-a9b3-47c3-ac5e-9cbeb53eda81" />
 
