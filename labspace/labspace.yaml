@@ -3,23 +3,40 @@ metadata:
   sourceRepo: github.com/ajeetraina/labspace-container-secutiry
   contentVersion: abcd123 # Will be filled in during CI
 
-title: Labspace starter
+title: Creating a More Secure Production with Containers
 description: |
-  A basic template for creating a Labspace, including all of the boilerplate needed to write and publish a Labspace.
+  A hands-on lab covering all 8 container security best practices using the
+  catalog-service-node app — from surfacing CVEs all the way to Docker Hardened Images
+  with SBOM, VEX, FIPS, and SLSA provenance attestations.
+  Content merges the Docker samples DHI Node labspace with the full security best
+  practices narrative from the slide deck.
 
 sections:
   - title: Introduction
     contentPath: 01-introduction.md
-  - title: Main Content 1
-    contentPath: 02-main-content.md
-  - title: Conclusion
-    contentPath: 03-conclusion.md
+  - title: Setup
+    contentPath: 02-setup.md
+  - title: "Demo #1 - Surface the Problem"
+    contentPath: 03-demo-surface-problem.md
+  - title: "Demo #2 - BP#1: Minimal Base Images"
+    contentPath: 04-demo-minimal-base.md
+  - title: "Demo #3 - BP#2: Multi-Stage Builds"
+    contentPath: 05-demo-multistage.md
+  - title: "Demo #4 - BP#3: Non-Root User"
+    contentPath: 06-demo-nonroot.md
+  - title: "Demo #5 - BP#4: Read-Only + Drop Capabilities"
+    contentPath: 07-demo-readonly-caps.md
+  - title: "Demo #6 - BP#5: Continuous Scanning with Scout"
+    contentPath: 08-demo-scanning.md
+  - title: "Demo #7 - BP#6, #7, #8: Secrets and Limiting Tools"
+    contentPath: 09-demo-secrets-tools.md
+  - title: "Demo #8 - Migrate to Docker Hardened Images"
+    contentPath: 10-demo-dhi-migration.md
+  - title: "Demo #9 - DHI Attestations + Scanner Integration"
+    contentPath: 11-demo-dhi-attestations.md
 
-# Services are used to add default tabs in the Labspace interface.
-# The IDE will always be present as a service, but you can add additional services as needed.
-# Icon values come from https://fonts.google.com/icons/
 services:
   - id: app
-    url: http://localhost:3000
+    url: http://localhost:3050
     title: App
-    icon: anchor
+    icon: draft
