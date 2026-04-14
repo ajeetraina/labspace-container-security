@@ -25,10 +25,21 @@ In this workshop we will learn:
 
 ## Launch the Labspace
 
+### Cloning the repo locally
+
+- Clone the repo
+- Run the following command:
+
+```bash
+CONTENT_PATH=$PWD docker compose up --watch
+```
+
+### With Cloning the repo
+
 To launch the lab, run the following command:
 
 ```bash
-docker compose -f oci://ajeetraina/labspace-container-security up
+docker compose -f oci://ajeetraina777/labspace-container-security up
 ```
 
 and then open your browser to [http://localhost:3030](http://localhost:3030)
