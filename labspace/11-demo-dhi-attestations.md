@@ -1,7 +1,33 @@
 # Demo #9 — DHI Attestations and Scanner Integration
 
+An attestation is a signed statement that provides verifiable information about an image or chart, such as how it was built, what's inside it, and what security checks it has passed. Attestations are typically signed using Sigstore tooling (such as Cosign), making them tamper-evident and cryptographically verifiable.
+
+Docker Hardened Images (DHIs) and charts include comprehensive, signed security attestations that verify the image's build process, contents, and security posture. These attestations are a core part of secure software supply chain practices and help users validate that an image is trustworthy and policy-compliant.
+
 > **Built-in supply chain security:** Every DHI ships with signed SBOMs, VEX documents,
 > and SLSA provenance for audit-ready pipelines.
+
+# Why are attestations important?
+
+Attestations provide critical visibility into the software supply chain by:
+
+- Documenting what went into an image (e.g., SBOMs)
+- Verifying how it was built (e.g., build provenance)
+- Capturing what security scans it has passed or failed (e.g., CVE reports, secrets scans, test results)
+- Helping organizations enforce compliance and security policies
+- Supporting runtime trust decisions and CI/CD policy gates
+- They are essential for meeting industry standards such as SLSA, and help teams reduce the risk of supply chain attacks by making build and security data transparent and verifiable.
+
+# How Docker Hardened Images and charts use attestations
+
+All DHIs and charts are built using SLSA Build Level 3 practices, and each image variant is published with a full set of signed attestations. These attestations allow users to:
+
+- Verify that the image or chart was built from trusted sources in a secure environment
+- View SBOMs in multiple formats to understand component-level details
+- Review scan results to check for vulnerabilities or embedded secrets
+- Confirm the build and deployment history of each image
+
+Attestations are automatically published and associated with each DHI and chart. They can be inspected using tools like Docker Scout or Cosign, and are consumable by CI/CD tooling or security platforms.
 
 ## List all attestations
 
