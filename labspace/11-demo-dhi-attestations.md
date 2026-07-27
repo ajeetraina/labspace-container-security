@@ -91,6 +91,21 @@ docker scout attest get \
 
 ## STIG attestation
 
+Security Technical Implementation Guides (STIGs) are configuration standards published by the U.S. Defense Information Systems Agency (DISA). 
+They define security requirements for operating systems, applications, databases, and other technologies used in U.S. Department of Defense (DoD) environments.
+
+STIGs help ensure that systems are configured securely and consistently to reduce vulnerabilities. They are often based on broader requirements like the DoD's General Purpose Operating System Security Requirements Guide (GPOS SRG).
+
+## How Docker Hardened Images help apply STIG guidance
+
+Docker Hardened Images (DHIs) include STIG variants that are scanned against custom STIG-based profiles and include signed STIG scan attestations. 
+These attestations can support audits and compliance reporting.
+
+While Docker Hardened Images are available to all, the STIG variant requires a Docker subscription.
+
+- Docker creates custom STIG-based profiles for images based on the GPOS SRG and DoD Container Hardening Process Guide.
+- Because DISA has not published a STIG specifically for containers, these profiles help apply STIG-like guidance to container environments in a consistent, reviewable way and are designed to reduce false positives common in container images.
+
 ```bash terminal-id=build
 docker scout attest get \
     --predicate-type https://docker.com/dhi/stig/v0.1 \
